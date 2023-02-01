@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Cupcakes.Repositories;
 
-namespace TPPracticaIngles
+namespace Cupcakes
 {
     public class Startup
     {
@@ -30,8 +30,6 @@ namespace TPPracticaIngles
             services.AddDbContext<CupcakeContext>(options =>
                options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc();
-
-            
         }
 
         public void Configure(IApplicationBuilder app)

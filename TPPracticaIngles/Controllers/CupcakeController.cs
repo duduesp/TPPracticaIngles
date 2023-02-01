@@ -15,8 +15,10 @@ namespace TPPracticaIngles.Controllers
     public class CupcakeController : Controller
     {
         private ICupcakeRepository _repository;
+        [Obsolete]
         private IHostingEnvironment _environment;
 
+        [Obsolete]
         public CupcakeController(ICupcakeRepository repository, IHostingEnvironment environment)
         {
             _repository = repository;
@@ -115,6 +117,7 @@ namespace TPPracticaIngles.Controllers
             ViewBag.BakeryID = new SelectList(bakeries.AsNoTracking(), "BakeryId", "BakeryName", selectedBakery);
         }
 
+        [Obsolete]
         public IActionResult GetImage(int id)
         {
             Cupcake requestedCupcake = _repository.GetCupcakeById(id);
